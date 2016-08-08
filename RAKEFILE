@@ -12,5 +12,5 @@ task :lint do
 end
 
 task :build do
-  sh 'gem build eyeq-metadata.gemspec'
+  sh 'gem build eyeq_metadata.gemspec'
 end

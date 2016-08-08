@@ -1,11 +1,11 @@
 Gem::Specification.new do |spec|
-  spec.name          = 'eyeq-metadata'
+  spec.name          = 'eyeq_metadata'
   spec.version       = '1.0.0'
   spec.authors       = ['Isaiah Soung']
   spec.date          = '2016-08-03'
   spec.summary       = 'HTTP client used specifically to request metadata from Gracenote EyeQ'
   spec.description   = 'Request Gracenote EyeQ metadata using the eyeq api'
-  spec.homepage      = 'https://github.com/Isoung/eyeq-metadata'
+  spec.homepage      = 'https://github.com/Isoung/eyeq_metadata'
   spec.license       = 'MIT'
   spec.files         = [
     'lib/eyeq_metadata.rb',
