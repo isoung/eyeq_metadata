@@ -31,6 +31,30 @@ class EyeQ
     query + "#{auth}#{get_query_type(options)}</QUERIES>"
   end
 
+  def get_query_type(options)
+    query_type = nil
+
+    case options[:query_type].downcase
+    when 'tvchannel_fetch'
+      throw new Error(':gnid option required') if options[:gnid].nil?
+      query_type = tvchannel_fetch(options[:gnid])
+    when 'tvchannel_lookup_by_provider'
+      throw new Error(':gnid option required') if options[:gnid].nil?
+      query_type = tvchannel_lookup_by_provider(options[:gnid])
+    when 'tvprovider_na'
+      throw new Error(':zipcode option required') if options[:zipcode].nil?
+      query_type = tvprovider_na(options[:zipcode])
+    when 'tvprovider_or'
+      throw new Error(':tvregion option required') if options[:tvregion].nil?
+      query_type = tvprovider_or(options[:tvregion])
+    when 'tvprogram_fetch'
+      throw new Error(':gnid option required') if options[:gnid].nil?
+      query_type = tvprogram_fetch(options[:gnid])
+    end
+
+    query_type
+  end
+
   def lang(lang = 'eng')
     "<LANG>#{lang}</LANG>"
   end
@@ -61,29 +85,5 @@ class EyeQ
 
   def tvprogram_fetch(gnid)
     "<QUERY CMD='TVPROGRAM_FETCH'><GN_ID>#{gnid}</GN_ID></QUERY>"
-  end
-
-  def get_query_type(options)
-    query_type = nil
-
-    case options[:query_type].downcase
-    when 'tvchannel_fetch'
-      throw new Error(':gnid option required') if options[:gnid].nil?
-      query_type = tvchannel_fetch(options[:gnid])
-    when 'tvchannel_lookup_by_provider'
-      throw new Error(':gnid option required') if options[:gnid].nil?
-      query_type = tvchannel_lookup_by_provider(options[:gnid])
-    when 'tvprovider_na'
-      throw new Error(':zipcode option required') if options[:zipcode].nil?
-      query_type = tvprovider_na(options[:zipcode])
-    when 'tvprovider_or'
-      throw new Error(':tvregion option required') if options[:tvregion].nil?
-      query_type = tvprovider_or(options[:tvregion])
-    when 'tvprogram_fetch'
-      throw new Error(':gnid option required') if options[:gnid].nil?
-      query_type = tvprogram_fetch(options[:gnid])
-    end
-
-    query_type
   end
 end

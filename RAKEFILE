@@ -5,7 +5,12 @@ require 'rspec/core/rake_task'
 RSpec::Core::RakeTask.new(:spec)
 
 task default: %w(lint spec)
+task compile: %w(lint spec build)
 
 task :lint do
   sh 'rubocop --config .rubocop.yml'
+end
+
+task :build do
+  sh 'gem build eyeq-metadata.gemspec'
 end
