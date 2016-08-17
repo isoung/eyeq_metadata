@@ -10,7 +10,3 @@ task compile: %w(lint spec build)
 task :lint do
   sh 'rubocop --config .rubocop.yml'
 end
-
-task :build do
-  sh 'gem build eyeq_metadata.gemspec'
-end

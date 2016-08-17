@@ -1,10 +1,9 @@
 source 'https://rubygems.org'
 
-# Specify your gem's dependencies in zompocalypse.gemspec
 gemspec
 
 group :dev, :default do
-  gem 'rest-client', '~>2.0.0'
+  gem 'httpi', '~>2.4.2'
 end
 
 group :dev do

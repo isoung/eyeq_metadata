@@ -14,11 +14,8 @@ describe EyeQ do
         body: query_body,
         headers: {
           'Accept' => '*/*',
-          'Accept-Encoding' => 'gzip, deflate',
-          'Content-Length' => query_body.length,
           'Content-Type' => 'text/xml',
-          'Host' => 'c1234567.ipg.web.cddbp.net',
-          'User-Agent' => 'rest-client/2.0.0 (darwin15 x86_64) ruby/2.0.0p648'
+          'User-Agent' => 'HTTPClient/1.0 (2.7.1, ruby 2.0.0 (2015-12-16))'
         }
       )
       .to_return(

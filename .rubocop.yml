@@ -19,4 +19,6 @@ PerceivedComplexity:
 MethodLength:
   Max: 30
 AbcSize:
-  Max: 40
+  Enabled: false
+ClassLength:
+  Enabled: false

@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name          = 'eyeq_metadata'
-  spec.version       = '1.0.0'
+  spec.version       = '1.2.2'
   spec.authors       = ['Isaiah Soung']
   spec.date          = '2016-08-03'
   spec.summary       = 'HTTP client used specifically to request metadata from Gracenote EyeQ'
@@ -11,9 +11,8 @@ Gem::Specification.new do |spec|
     'lib/eyeq_metadata.rb',
     'README.md'
   ]
-  spec.required_ruby_version = '>= 2.0.0'
-  spec.add_runtime_dependency 'rest-client', '~>2.0.0'
-  spec.add_development_dependency 'rubocop', '~>0.41.1'
-  spec.add_development_dependency 'rspec', '~>3.5.0'
-  spec.add_development_dependency 'webmock', '~>2.1.0'
+  spec.add_runtime_dependency 'httpi', '>= 2.4.2'
+  spec.add_development_dependency 'rubocop', '>= 0.41.1'
+  spec.add_development_dependency 'rspec', '>= 3.5.0'
+  spec.add_development_dependency 'webmock', '>= 2.1.0'
 end
