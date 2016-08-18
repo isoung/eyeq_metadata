@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name          = 'eyeq_metadata'
-  spec.version       = '1.2.2'
+  spec.version       = '1.3.2'
   spec.authors       = ['Isaiah Soung']
   spec.date          = '2016-08-03'
   spec.summary       = 'HTTP client used specifically to request metadata from Gracenote EyeQ'

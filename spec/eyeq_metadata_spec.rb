@@ -48,4 +48,10 @@ describe EyeQ do
     response = @eyeq.request(query_type: 'tvchannel_fetch', gnid: '123-456-789')
     expect(response.css('RESPONSE').text).to match('FAKE_TV_CHANNEL')
   end
+
+  it 'should return a stubbed response after a avwork_fetch' do
+    create_fake_request('avwork_fetch_query')
+    response = @eyeq.request(query_type: 'avwork_fetch', gnid: '123-456-789')
+    expect(response.css('RESPONSE').text).to match('FAKE_AV_WORK')
+  end
 end

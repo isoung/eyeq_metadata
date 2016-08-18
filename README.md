@@ -14,6 +14,7 @@ response.request(query_type: 'tvchannel_fetch', gnid: '123-456-789')
 # returns a Nokogiri::XML object that contains the response from eyeq
 
 # list of supported searches
+# ----------------------- EPG
 # tvchannel_fetch               - :gnid
 # tvchannel_lookup_by_provider  - :gnid
 # tvprovider_na                 - :zipcode
@@ -21,6 +22,8 @@ response.request(query_type: 'tvchannel_fetch', gnid: '123-456-789')
 # tvprogram_fetch               - :gnid
 # tvgrid_search                 - :program_title & :tvchannel_gnid (optional :date_start & :date_end)
 # tvgrid_lookup                 - :tvchannel_gnid (optional :date_start & :date_end)
+# ----------------------- VIDEO
+# avwork_fetch                  - :gnid
 ```
 
 ##Navigating Nokogiri::XML objects

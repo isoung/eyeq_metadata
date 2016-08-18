@@ -65,9 +65,11 @@ class EyeQ
     when 'tvgrid_lookup'
       throw new Error(':tvchannel_gnid option required') if options[:tvchannel_gnid].nil?
       query_type = tvgrid_lookup(options)
+    when 'avwork_fetch'
+      throw new Error(':gnid option required') if options[:gnid].nil?
+      query_type = avwork_fetch(options[:gnid])
     end
 
-    puts query_type
     query_type
   end
 
@@ -126,6 +128,10 @@ class EyeQ
       query << "<GN_ID>#{gnid}</GN_ID>"
     end
     query << "</TVCHANNEL>#{insert_date_time(options)}</QUERY>"
+  end
+
+  def avwork_fetch(gnid)
+    "<QUERY CMD='AV_WORK_FETCH'><GN_ID>#{gnid}</GN_ID></QUERY>"
   end
 
   def insert_date_time(options)
