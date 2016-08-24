@@ -10,6 +10,8 @@ gem install eyeq_metadata
 require 'eyeq_metadata'
 
 eyeq = EyeQ.new(clientid, clientid_tag)
+# optional option logging = false/true(default). EyeQ.new(clientid, clientid_tag, logging: false)
+# Disabling logging may cause some unintended consequences to other portions of your script/app.
 response.request(query_type: 'tvchannel_fetch', gnid: '123-456-789')
 # returns a Nokogiri::XML object that contains the response from eyeq
 

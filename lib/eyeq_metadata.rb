@@ -4,10 +4,10 @@ require 'httpi'
 class EyeQ
   attr_reader :eyeq_url, :eyeq_userid, :eyeq_clientid
 
-  def initialize(clientid, clientid_tag)
+  def initialize(clientid, clientid_tag, opts = {})
     @eyeq_url = "https://c#{clientid}.ipg.web.cddbp.net/webapi/xml/1.0/"
     @eyeq_clientid = "#{clientid}-#{clientid_tag}"
-    HTTPI.log = false
+    HTTPI.log = false if opts[:logging] == false
 
     register_query = "<QUERIES><QUERY CMD='REGISTER'><CLIENT>#{@eyeq_clientid}</CLIENT></QUERY></QUERIES>"
     response = HTTPI.post(construct_request(register_query))
